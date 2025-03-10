@@ -1,0 +1,304 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    text-decoration: none;
+    transition: all 0.3s linear;
+}
+
+
+:root{
+    --min-color: #fff;
+    --sc-color: red;
+    --th-color: #333;
+}
+body{
+    background-color: #000;
+}
+
+/* ------heading starts------ */
+.btn{
+    display: inline-block;
+    font-size: 1.8rem;
+    padding: 0.8rem 3.5rem;
+    border: 0.1rem solid var(--sc-color);
+    background: var(--sc-color);
+    text-align: center;
+    color: var(--min-color);
+    cursor: pointer;
+}
+
+.btn:hover{
+    background:none;
+}
+
+.header{
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--sc-color);
+    margin: 3rem 0;
+}
+header{
+    position: fixed;
+    top: 0; right: 0; left: 0;
+    display: flex;
+    z-index: 99999;
+    justify-content: space-between;
+    padding: 0.5rem 3rem;
+    background: none;
+}
+
+header .logo{
+    font-size: 3.2rem;
+    color: var(--min-color);
+    padding: 0.4rem;
+}
+
+header .logo span{
+    color: var(--sc-color);
+    font-size: 4rem;
+}
+
+header .navbar a{
+    margin: 0rem 0.8rem;
+    color: var(--min-color);
+    padding: 0.4rem;
+}
+
+header .navbar a:hover,
+header .fa-bars:hover{
+    color: var(--sc-color);
+    border: 0.1rem solid var(--sc-color);
+}
+
+header .fa-bars:hover{
+    border: 0px;
+}
+header .fa-bars{
+    color: var(--min-color);
+    font-size: 2.8rem;
+    cursor: pointer;
+    /* display: none; */
+}
+
+/* ------heading ends------ */
+
+/* ---------------------------------------------------- */
+
+/* ------home starts------ */
+
+.home .home-slide .box{
+    position: relative;
+}
+
+.home .home-slide .box .image img{
+    min-height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.home .home-slide .box::before{
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+}
+.home .home-slide .box .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: var(--min-color);
+    text-align: center;
+}
+
+.home .home-slide .box .content h3{
+    font-size: 4rem;
+}
+.home .home-slide .box .content p{
+    font-size: 2.5rem;
+    margin: 1rem 0;
+}
+
+/* ------home ends------ */
+
+/* ---------------------------------------------------- */
+
+/* ------about starts------ */
+
+.about .row{
+    display: flex;
+}
+
+.about .row .image img{
+    width: 100%;
+    height: 40rem;
+    object-fit: cover;
+}
+.about .row .content{
+    width: 65%;
+    background-color: #fff;
+    text-align: center;
+    padding: 3rem;
+}
+.about .row .content h3{
+    font-size: 4rem;
+    margin: 3rem 0;
+}
+.about .row .content p{
+    font-size: 2.5rem;
+    margin: 2rem 0;
+}
+
+/* ------about ends------ */
+
+/* ---------------------------------------------------- */
+
+
+/* ----- gallery start ------ */
+.gallery .row{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25%,1fr));
+    gap: 1rem;
+}
+
+.gallery .row .box{
+    position: relative;
+    overflow: hidden;
+}
+.gallery .row .box:hover img{
+    transform: translateY(-100%);
+}
+.gallery .row .box:hover .content{
+    transform: translateY(0);
+}
+.gallery .row .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.gallery .row .box .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    padding: 3rem 2rem;
+    height: 100%;
+    transform: translateY(100%);
+}
+.gallery .row .box .content h3{
+    font-size: 3rem;
+    color: var(--min-color);
+}
+.gallery .row .box .content p{
+    font-size: 2.4rem;
+    color: var(--min-color);
+    margin: 1rem 0;
+    padding: 1rem 0;
+}
+
+/* ----- gallery end ------ */
+
+
+/* ---------------------------------------------------- */
+
+/* ----- team starts ------ */
+
+.team .team-slider{
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(30%, 1fr));
+    gap: 0.5rem;
+}
+
+.team .team-slider .box{
+    width: 30%;
+    text-align: center;
+    margin: 1rem;
+}
+.team .team-slider .box img{
+    width: 100%;
+    height: 40rem;
+}
+/* ----- team ends ------ */
+
+/* ---------------------------------------------------- */
+
+/* ----- contact starts ----- */
+.contact .row{
+    display: flex;
+    align-items: center;
+}
+
+.contact .row .form{
+    width: 70%;
+}
+
+.contact .row .image img{
+    width: 100%;
+}
+
+.contact .row .form form input,
+.contact .row .form form textarea{
+    font-size: 2rem;
+    padding: 0.8rem;
+    margin: 0.8rem;
+    color: var(--min-color);
+    background: none;
+}
+
+.contact .row .form form input[type="submit"]{
+    background: var(--sc-color);
+    border: none;
+}
+
+.contact .row .form form input::placeholder{
+    color: red;
+    text-align: center;
+}
+
+
+/* ----- contact ends ----- */
+
+/* ---------------------------------------------------- */
+
+/* ------ footer starts -------- */
+
+
+.footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20% , 1fr));
+    background: #000;
+    gap: 2rem;
+    padding: 4rem;
+    text-align: center;
+}
+.footer h3{
+    font-size: 3.5rem;
+    color: var(--min-color);
+    margin:2rem 0;
+}
+.footer p{
+    font-size: 1.6rem;
+    margin: 1rem 0;
+    color: var(--min-color);
+}
+.footer i{
+    font-size: 2.5rem;
+    margin: 1rem 0.5rem;
+    color: var(--min-color);
+}
+.footer i:hover,
+.footer a:hover{
+    color: var(--sc-color);
+}
+
+.footer a{
+    display: block;
+    font-size: 1.8rem;
+    margin: 0.5rem;
+    color: var(--min-color);
+}
+
+/* ------ footer ends -------- */
+
+/* ---------------------------------------------------- */
