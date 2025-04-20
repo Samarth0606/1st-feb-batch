@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: cursive; */
+}
+
+:root{
+    --cell-size: 100px;
+    --mark-size:  calc(var(--cell-size)*0.9)
+}
+
+.board{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    justify-content: center;
+    align-content: center;
+    gap:0
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top: none;
+}
+
+.cell:last-child,
+.cell:nth-child(7),
+.cell:nth-child(8){
+    border-bottom: none;
+}
+
+.cell:nth-of-type(3n+1){
+    border-left: none;
+}
+
+.cell:nth-of-type(3n+3){
+    border-right: none;
+}
+
+.cell{
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid black;
+
+    position: relative;
+}
+
+.x::before,
+.x::after{
+    content: "";
+    height: var(--mark-size) ;
+    width: calc(var(--mark-size)*0.15) ;
+    background-color: black;
+    position: absolute;
+    top: 7%;
+    right: 45%;
+}
+
+.x::before{
+    transform: rotate(45deg);
+}
+.x::after{
+    transform: rotate(-45deg);
+}
+
+
+.circle::before,
+.circle::after{
+    content: "";
+    height: var(--mark-size) ;
+    width: var(--mark-size) ;
+    background-color: black;
+    position: absolute;
+    border-radius: 50%;
+    top: 5%;
+    right: 4%;
+}
+
+.circle::after{
+    height: calc(var(--mark-size)*0.7) ;
+    width: calc(var(--mark-size)*0.7);
+    transform: rotate(-45deg);
+    background-color: white;
+    right: 18%;
+    top: 18%;
+}
+
+
+.x,.circle{
+    cursor: not-allowed;
+}
+
+
+.winner-message{
+    display: none;
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color:rgba(0, 0, 0, 0.8) ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+    color: whitesmoke;
+    gap: 20px;
+}
+
+button{
+    color: whitesmoke;
+    font-size: 3rem;
+    border: '2px solid black';
+    color: black;
+    padding:0.5rem 1rem;
+    cursor: pointer;
+}
+
+.winner-message.show{
+    display: flex;
+}
+
+
