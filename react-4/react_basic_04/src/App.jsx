@@ -1,47 +1,60 @@
-import React from "react";
+import Parent from "./components/Parent";
 
-export default class App extends React.Component{
-
-  constructor(){
-    super();
-    this.state = {
-      number: 0,
-    }
-  }
-
-  componentDidMount(){ console.log("Component did mount") }
-
-  componentDidUpdate(prevProp){ 
-    if(this.state.number !== prevProp.number){
-      console.log("Component did update")
-    }
-  }
-
-  handleInc() { this.setState( { number: this.state.number + 1}) }
-  handleDec() { this.setState( { number: this.state.number - 1}) }
-
-  render(){
-    return(
-      <div>
-        <h1> number: {this.state.number} </h1>
-        { this.state.number < 5 ? <Greeting /> : null }
-        <button onClick={this.handleDec.bind(this)} >-</button>
-        <button onClick={this.handleInc.bind(this)} >+</button>
-      </div>
-    )
-  }
+function App(){
+  return(
+    <div>
+      <h1>App</h1>
+      <Parent />
+    </div>
+  )
 }
 
-class Greeting extends React.Component{
-  componentWillUnmount(){
-    console.log("component unmounted");
-  }
-  render(){
-    return(
-      <h1>GREETING FROM SAMARTH</h1>
-    )
-  }
-}
+export default App;
+
+// import React from "react";
+
+// export default class App extends React.Component{
+
+//   constructor(){
+//     super();
+//     this.state = {
+//       number: 0,
+//     }
+//   }
+
+//   componentDidMount(){ console.log("Component did mount") }
+
+//   componentDidUpdate(prevProp){ 
+//     if(this.state.number !== prevProp.number){
+//       console.log("Component did update")
+//     }
+//   }
+
+//   handleInc() { this.setState( { number: this.state.number + 1}) }
+//   handleDec() { this.setState( { number: this.state.number - 1}) }
+
+//   render(){
+//     return(
+//       <div>
+//         <h1> number: {this.state.number} </h1>
+//         { this.state.number < 5 ? <Greeting /> : null }
+//         <button onClick={this.handleDec.bind(this)} >-</button>
+//         <button onClick={this.handleInc.bind(this)} >+</button>
+//       </div>
+//     )
+//   }
+// }
+
+// class Greeting extends React.Component{
+//   componentWillUnmount(){
+//     console.log("component unmounted");
+//   }
+//   render(){
+//     return(
+//       <h1>GREETING FROM SAMARTH</h1>
+//     )
+//   }
+// }
 
 
 
