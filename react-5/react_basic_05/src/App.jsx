@@ -1,13 +1,17 @@
 
 import Event from "./components/Event";
 import Memoo from "./components/Memoo";
+import UseCallback from "./components/useCallback";
+import Usememoo from "./components/Usememoo";
 
 function App(){
   return(
     <div>
       <h1>Hello from App</h1>
       {/* <Memoo remote="HC VERMA"  /> */}
-      <Event />
+      {/* <Event /> */}
+      {/* <Usememoo /> */}
+      <UseCallback />
     </div>
   )
 }
