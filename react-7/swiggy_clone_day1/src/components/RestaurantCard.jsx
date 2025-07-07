@@ -1,14 +1,14 @@
 import React from 'react'
 
-function RestaurantCard() {
+function RestaurantCard({item}) {
   return (
-    <div className='m-8'>
-        <img className='h-42 w-58 rounded-2xl' src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/6/9/a1e023e4-bdf3-4bcb-b4d9-2498ba52528e_1003414.JPG" alt="" />
-        <h1 className='font-bold pl-2'>Pizza Hut</h1>
-        <span className='font-bold pl-2'>4.5</span>
-        <span className='font-bold mx-3 pl-2'>45-50mins</span>
-        <p className='pl-2'>Pizza's</p>
-        <p className='pl-2'>Pubjabi Bagh Road</p>
+    <div className='m-8 w-58'>
+        <img className='h-42 w-58 rounded-2xl' src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${item.info.cloudinaryImageId}`} alt="" />
+        <h1 className='font-bold pl-2'>{item?.info?.name}</h1>
+        <span className='font-bold pl-2'>{item?.info?.avgRating}</span>
+        <span className='font-bold mx-3 pl-2'>{item?.info?.sla?.slaString}</span>
+        <p className='pl-2'>{item?.info?.cuisines[0]}</p>
+        <p className='pl-2'>{item?.info?.locality}</p>
     </div>
   )
 }
