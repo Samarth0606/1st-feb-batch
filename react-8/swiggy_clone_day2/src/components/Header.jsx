@@ -4,6 +4,7 @@ import { BiSolidOffer } from "react-icons/bi";
 import { IoMdHelpCircleOutline } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
 import { FaCartShopping } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 
 
@@ -19,19 +20,19 @@ function Header() {
                 </div>
                 <div className='flex mx-4'>
                     <span className='mt-1'> <BiSolidOffer /> </span>
-                    <li className='px-2'>OFFERS</li>
+                    <Link to="/offers"> <li className='px-2'>OFFERS</li> </Link>
                 </div>
                 <div className='flex mx-4'>
                     <span className='mt-1'> <IoMdHelpCircleOutline /> </span>
-                    <li className='px-2'>HELP</li>
+                    <Link to="/help"> <li className='px-2'>HELP</li> </Link>
                 </div>
                 <div className='flex mx-4'>
                     <span className='mt-1'> <CgProfile /> </span>
-                    <li className='px-2'>SIGNUP</li>
+                   <Link to="/signup"> <li className='px-2'>SIGNUP</li></Link>
                 </div>
                 <div className='flex mx-4'>
                     <span className='mt-1'> <FaCartShopping /> </span>
-                    <li className='px-2'>CART</li>
+                    <Link to="/cart"><li className='px-2'>CART</li></Link>
                 </div>
             </ul>
         </nav>
