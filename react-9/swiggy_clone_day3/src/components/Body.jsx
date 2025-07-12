@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import RestaurantCard from './RestaurantCard'
 import Apicalling from './Apicalling'
 import Search from './Search';
+import { Link } from 'react-router-dom';
 
 function Body() {
 
@@ -37,15 +38,17 @@ function Body() {
         
         <button onClick={()=>handleTopRating(restArr)} className={isClicked1? "text-lg border rounded-xl w-1/12 ml-20 bg-yellow-200" : "text-lg border rounded-xl w-1/12 ml-20"}>Rating 4.5+</button>
         <button onClick={()=>handleReset(restArr)} className={isClicked2 ? 'text-lg border rounded-xl w-1/12 ml-10 bg-amber-200' : 'text-lg border rounded-xl w-1/12 ml-10'}>Reset</button>
-        <div className='flex flex-wrap m-auto w-10/12'>
-           {
-            allRestaurant.map((item)=>{
+          <div className='flex flex-wrap m-auto w-10/12'>
+            {
+              allRestaurant.map((item)=>{
                 return(
-                    <RestaurantCard item={item} />
-                )
-            })
-           }
-        </div>
+                    <Link to={`/restaurant/${item.info.id}`}>
+                      <RestaurantCard item={item} />
+                    </Link>
+                  )
+              })
+            }
+          </div>
     </div>
   )
 }

@@ -8,6 +8,7 @@ import Help from './components/Help.jsx'
 import Signup from './components/Signup.jsx'
 import Body from './components/Body.jsx'
 import Error from './components/Error.jsx'
+import RestaurantMenu from './components/RestaurantMenu.jsx'
 
 const appRouter = createBrowserRouter([
   {
@@ -18,7 +19,8 @@ const appRouter = createBrowserRouter([
       {path: "/"       , element: <Body />},
       {path: "/offers" , element: <Offer />},
       {path: "/help"   , element: <Help />},
-      {path: "/signup" , element: <Signup />}
+      {path: "/signup" , element: <Signup />},
+      {path: "/restaurant/:id" , element: <RestaurantMenu />}
     ]
   },
   
