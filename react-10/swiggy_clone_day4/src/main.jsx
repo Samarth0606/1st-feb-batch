@@ -10,6 +10,7 @@ import Body from './components/Body.jsx'
 import Error from './components/Error.jsx'
 import RestaurantMenu from './components/RestaurantMenu.jsx'
 import Clock from './components/Clock.jsx'
+import Cart from './components/Cart.jsx'
 
 const appRouter = createBrowserRouter([
   {
@@ -22,7 +23,8 @@ const appRouter = createBrowserRouter([
       {path: "/help"   , element: <Help />},
       {path: "/signup" , element: <Signup />},
       {path: "/restaurant/:id" , element: <RestaurantMenu />},
-      {path: "/clock" , element: <Clock />}
+      {path: "/clock" , element: <Clock />},
+      {path: "/cart" , element: <Cart />}
     ]
   },
   
