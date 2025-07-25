@@ -1,7 +1,5 @@
 import RestaurantModel from "../models/Restaurant.model.js";
 
-
-
 // READ
 export async function fetchRestaurant(req,res){
     try{
@@ -12,7 +10,7 @@ export async function fetchRestaurant(req,res){
         return res.status(200).json(data)
     }
     catch(err){
-        res.status(500).json("SERVER ERROR" , err)
+        return res.status(500).json("SERVER ERROR" , err)
     }
 }
 // CREATE
@@ -22,9 +20,32 @@ export async function createRestaurant(req,res){
         // const {name,imageUrl,rating,deliveryTime,cuisines} = req.body;
         // const data = await RestaurantModel.create({name,imageUrl,rating,deliveryTime,cuisines})
         const data = await RestaurantModel.create(req.body)
-        res.status(201).json({"New Restaurant" : data})
+        return res.status(201).json({"New Restaurant" : data})
     }
     catch(err){
-        res.status(500).json("SERVER ERROR" , err)
+        return res.status(500).json("SERVER ERROR" , err)
     }
 }
+// UPDATE
+export async function updateRestaurant(req,res) {
+    try{
+        const {id} = req.params;    // req.params.id 
+        const updatedRestaurant = await RestaurantModel.findByIdAndUpdate(id , req.body , {new:true} );
+        return res.status(200).send(updatedRestaurant)
+    }
+    catch(err){
+        return res.status(500).json("SERVER ERROR" , err)
+    } 
+} 
+
+// DELETE
+export async function deleteRestaurant(req,res) {
+    try{
+        const {id} = req.params; 
+        const deletedRestaurant = await RestaurantModel.findByIdAndDelete(id);
+        return res.status(200).json({"Message": "Restaurant deleted successfully"})
+    }
+    catch(err){
+        return res.status(500).json("SERVER ERROR" , err)
+    } 
+} 
